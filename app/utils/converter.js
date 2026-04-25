@@ -26,12 +26,23 @@ async function loadPdfJs() {
   return pdfjsLib;
 }
 
-function loadImage(file) {
+async function ensureImageBlob(file) {
+  const name = file.name.toLowerCase();
+  if (name.endsWith(".heic") || name.endsWith(".heif")) {
+    const heic2any = (await import("heic2any")).default;
+    const convertedBlob = await heic2any({ blob: file, toType: "image/jpeg", quality: 0.8 });
+    return Array.isArray(convertedBlob) ? convertedBlob[0] : convertedBlob;
+  }
+  return file;
+}
+
+async function loadImage(file) {
+  const blob = await ensureImageBlob(file);
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.onload = () => resolve(img);
     img.onerror = () => reject(new Error("ไม่สามารถโหลดรูปภาพได้"));
-    img.src = URL.createObjectURL(file);
+    img.src = URL.createObjectURL(blob);
   });
 }
 
@@ -67,6 +78,8 @@ function canvasToBlob(canvas, options) {
 /** ตรวจสอบประเภทไฟล์ */
 export function getFileType(file) {
   if (file.type === "application/pdf") return "pdf";
+  const name = file.name.toLowerCase();
+  if (name.endsWith(".heic") || name.endsWith(".heif")) return "heic";
   if (file.type.startsWith("image/")) return "image";
   return "unknown";
 }
@@ -97,7 +110,7 @@ export async function getFileInfo(file) {
     } catch (e) {
       console.error("Error reading PDF:", e);
     }
-  } else if (type === "image") {
+  } else if (type === "image" || type === "heic") {
     try {
       const img = await loadImage(file);
       info.width = img.naturalWidth;
@@ -117,10 +130,12 @@ export async function convertFile(file, options, onProgress) {
     return convertPDFtoDocx(file, options, onProgress);
   }
   if (type === "pdf") return convertPDF(file, options, onProgress);
-  if (type === "image" && options.format === "pdf") {
-    return convertImageToPDF(file, options, onProgress);
+  if (type === "image" || type === "heic") {
+    if (options.format === "pdf") {
+      return convertImageToPDF(file, options, onProgress);
+    }
+    return convertImage(file, options, onProgress);
   }
-  if (type === "image") return convertImage(file, options, onProgress);
   throw new Error("ไม่รองรับประเภทไฟล์นี้");
 }
 
@@ -386,8 +401,14 @@ async function convertImageToPDF(file, options, onProgress) {
 /** สร้าง thumbnail preview ของไฟล์ (Data URL) */
 export async function generatePreview(file) {
   const type = getFileType(file);
-  if (type === "image") {
-    return URL.createObjectURL(file);
+  if (type === "image" || type === "heic") {
+    try {
+      const blob = await ensureImageBlob(file);
+      return URL.createObjectURL(blob);
+    } catch (e) {
+      console.error("Preview error:", e);
+      return null;
+    }
   }
   if (type === "pdf") {
     try {

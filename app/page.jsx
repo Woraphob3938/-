@@ -21,7 +21,7 @@ import {
 
 const supportedFormats = [
   { icon: "picture_as_pdf", label: "PDF" },
-  { icon: "image", label: "JPG / PNG" },
+  { icon: "image", label: "JPG / PNG / HEIC" },
   { icon: "description", label: "WEBP" },
   { icon: "table", label: "SVG" },
   { icon: "description", label: "DOCX" },
@@ -137,7 +137,7 @@ function LandingView({ onUpload }) {
             ref={inputRef}
             className="sr-only"
             type="file"
-            accept="application/pdf,image/*"
+            accept="application/pdf,image/*,.heic,.heif"
             multiple
             onChange={(e) => handleFiles(e.target.files)}
           />
