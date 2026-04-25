@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Converto - การแปลงไฟล์ระดับมืออาชีพ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-container": "#f4fffc",
+                        "on-primary-fixed": "#00201d",
+                        "on-tertiary-container": "#fffbff",
+                        "primary-fixed": "#89f5e7",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "outline": "#6d7a77",
+                        "on-secondary-container": "#57657b",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#3d4947",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#008378",
+                        "tertiary-fixed": "#ffdbce",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#d5e3fd",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#370e00",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#d5e3fd",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#00685f",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "on-tertiary-fixed-variant": "#773215",
+                        "inverse-primary": "#6bd8cb",
+                        "outline-variant": "#bcc9c6",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-container": "#b05e3d",
+                        "surface-bright": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "surface": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#924628",
+                        "secondary": "#515f74",
+                        "surface-tint": "#006a61",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "margin": "32px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Manrope"],
+                        "mono-label": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "mono-label": ["13px", {"lineHeight": "1", "letterSpacing": "0", "fontWeight": "500"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .material-symbols-outlined { font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal; font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; word-wrap: normal; direction: ltr; -webkit-font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest/90 backdrop-blur-md text-primary font-body-sm font-medium tracking-tight docked full-width top-0 sticky border-b border-surface-container-highest shadow-sm z-50">
+<div class="flex justify-between items-center h-16 px-8 max-w-[1024px] mx-auto w-full">
+<div class="text-xl font-bold tracking-tighter text-primary flex items-center gap-2" style="">
+<span class="material-symbols-outlined" style='font-variation-settings: "FILL" 1;'>sync_alt</span>
+                Converto
+            </div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-body-sm" href="#" style="">เครื่องมือ</a>
+<a class="text-secondary hover:text-on-surface transition-colors duration-200 font-body-sm" href="#" style=""><br/></a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin py-xl w-full">
+<!-- Hero Section -->
+<div class="text-center max-w-2xl mx-auto mb-lg">
+<h1 class="font-h1 text-h1 text-on-surface mb-sm" style="">การแปลงไฟล์ระดับมืออาชีพ</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant" style="">การแปลงไฟล์ที่ปลอดภัย รวดเร็ว และแม่นยำสำหรับเวิร์กโฟลว์ระดับองค์กร วางไฟล์ของคุณด้านล่างเพื่อเริ่มใช้งาน</p>
+</div>
+<!-- Upload Zone Hub -->
+<div class="w-full max-w-[1024px] mx-auto bg-surface-container-lowest border border-surface-container-highest rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.04)] p-lg flex flex-col items-center justify-center">
+<div class="w-full border-2 border-dashed border-outline-variant rounded-lg p-xl flex flex-col items-center justify-center text-center transition-colors hover:bg-surface-container-low hover:border-primary cursor-pointer group">
+<div class="bg-surface-container-high rounded-full p-4 mb-4 group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[32px] text-secondary group-hover:text-on-primary-container" style="">upload_file</span>
+</div>
+<h3 class="font-h3 text-h3 text-on-surface mb-xs" style="">ลากและวางไฟล์ที่นี่</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md" style="">หรือคลิกเพื่อเลือกจากคอมพิวเตอร์ของคุณ</p>
+<button class="bg-primary text-on-primary px-6 py-3 rounded font-label-caps text-label-caps tracking-wider hover:bg-primary-fixed-dim transition-colors" style="">เลือกไฟล์</button>
+</div>
+<!-- Supported Formats Row -->
+<div class="mt-lg w-full">
+<p class="font-mono-label text-mono-label text-on-surface-variant text-center mb-sm uppercase" style="">รูปแบบที่รองรับ</p>
+<div class="flex flex-wrap justify-center gap-md">
+<!-- Format Pills -->
+<div class="flex items-center gap-xs bg-surface-container px-3 py-1.5 rounded text-secondary border border-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]" style="">picture_as_pdf</span>
+<span class="font-mono-label text-mono-label" style="">PDF</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container px-3 py-1.5 rounded text-secondary border border-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]" style="">image</span>
+<span class="font-mono-label text-mono-label" style="">JPG / PNG</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container px-3 py-1.5 rounded text-secondary border border-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]" style="">description</span>
+<span class="font-mono-label text-mono-label" style="">DOCX</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container px-3 py-1.5 rounded text-secondary border border-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]" style="">table</span>
+<span class="font-mono-label text-mono-label" style="">XLSX</span>
+</div>
+<div class="flex items-center gap-xs bg-surface-container px-3 py-1.5 rounded text-secondary border border-surface-container-highest">
+<span class="material-symbols-outlined text-[16px]" style="">movie</span>
+<span class="font-mono-label text-mono-label" style="">MP4</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Features Bento Grid (Conceptual) -->
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-12 border-t border-surface-container-highest mt-auto">
+<div class="max-w-[1024px] mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-lg font-bold text-on-surface font-h3" style="">Converto</div>
+<div class="flex gap-6 items-center">
+<a class="font-body-sm text-xs text-secondary hover:text-primary transition-colors opacity-100 hover:opacity-80" href="#" style=""><br/></a>
+<a class="font-body-sm text-xs text-secondary hover:text-primary transition-colors opacity-100 hover:opacity-80" href="#" style=""><br/></a>
+<a class="font-body-sm text-xs text-secondary hover:text-primary transition-colors opacity-100 hover:opacity-80" href="#" style=""><br/></a>
+<a class="font-body-sm text-xs text-secondary hover:text-primary transition-colors opacity-100 hover:opacity-80" href="#" style=""><br/></a>
+</div>
+<div class="font-body-sm text-xs text-secondary" style="">© 2024 Converto Industrial. การแปลงไฟล์ระดับมืออาชีพ</div>
+</div>
+</footer>
+</body></html>

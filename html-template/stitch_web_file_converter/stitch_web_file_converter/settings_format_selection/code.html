@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Converto - การเลือกรูปแบบ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-container": "#f4fffc",
+                        "on-primary-fixed": "#00201d",
+                        "on-tertiary-container": "#fffbff",
+                        "primary-fixed": "#89f5e7",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "outline": "#6d7a77",
+                        "on-secondary-container": "#57657b",
+                        "on-primary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#3d4947",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#008378",
+                        "tertiary-fixed": "#ffdbce",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#d5e3fd",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#370e00",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#d5e3fd",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary": "#00685f",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "on-tertiary-fixed-variant": "#773215",
+                        "inverse-primary": "#6bd8cb",
+                        "outline-variant": "#bcc9c6",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-container": "#b05e3d",
+                        "surface-bright": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "surface": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#924628",
+                        "secondary": "#515f74",
+                        "surface-tint": "#006a61",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "margin": "32px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Manrope"],
+                        "mono-label": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-caps": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1", "letterSpacing": "0", "fontWeight": "500" }],
+                        "h2": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "h3": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md"><nav class="bg-surface-container-lowest border-b border-outline-variant px-margin py-4">
+<div class="max-w-[1024px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-xl">
+<!-- Brand Logo -->
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">change_circle</span>
+</div>
+<span class="font-h3 text-h3 text-on-surface text-[20px] tracking-tight">Converto</span>
+</div>
+<!-- Navigation Links (Keeping only 'เครื่องมือ') -->
+<div class="hidden md:flex items-center gap-md">
+<a class="font-body-sm text-body-sm text-on-surface hover:text-primary transition-colors font-medium" href="#">เครื่องมือ</a>
+</div>
+</div>
+<!-- The 'เข้าสู่ระบบ' and 'สมัครสมาชิก' buttons are removed as requested -->
+</div>
+</nav>
+<!-- TopNavBar (Suppressed as per rules for transactional/task-focused sub-page) -->
+<main class="flex-grow max-w-[1024px] mx-auto w-full px-margin py-lg flex flex-col gap-lg">
+<!-- Header / Back Action -->
+<header class="flex items-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-h3 text-h3 text-on-surface">การเลือกรูปแบบ</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">กำหนดค่าการแปลงไฟล์สำหรับ presentation_Q3_final.pdf</p>
+</div>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: File Preview & Info (Bento Grid Style) -->
+<div class="md:col-span-5 flex flex-col gap-sm">
+<!-- File Preview Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col items-center justify-center min-h-[300px] shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<div class="w-32 h-40 bg-surface-container flex items-center justify-center rounded border border-outline-variant mb-md shadow-sm relative overflow-hidden">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-surface text-center break-all">presentation_Q3_final.pdf</h2>
+<span class="font-mono-label text-mono-label text-on-surface-variant mt-xs">4.2 MB • 12 หน้า</span>
+</div>
+<!-- Source Info Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-sm">รายละเอียดต้นฉบับ</h3>
+<dl class="flex flex-col gap-xs font-body-sm text-body-sm">
+<div class="flex justify-between">
+<dt class="text-on-surface-variant">สร้างเมื่อ</dt>
+<dd class="text-on-surface text-right">24 ต.ค. 2023</dd>
+</div>
+<div class="flex justify-between">
+<dt class="text-on-surface-variant">ความละเอียด</dt>
+<dd class="text-on-surface text-right">1920x1080</dd>
+</div>
+<div class="flex justify-between">
+<dt class="text-on-surface-variant">พื้นที่สี</dt>
+<dd class="text-on-surface text-right">RGB</dd>
+</div>
+</dl>
+</div>
+</div>
+<!-- Right Column: Settings & Actions -->
+<div class="md:col-span-7 flex flex-col gap-md">
+<!-- Output Format Selection -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col gap-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-sm">
+<h2 class="font-h3 text-h3 text-on-surface">รูปแบบเอาต์พุต</h2>
+<span class="font-mono-label text-mono-label text-primary bg-primary-fixed text-on-primary-fixed px-sm py-xs rounded-full">จำเป็น</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-sm mt-sm">
+<!-- Format Option 1 (Selected) -->
+<label class="cursor-pointer relative">
+<input checked="" class="sr-only" name="format" type="radio" value="png"/>
+<div class="border-2 border-primary bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center gap-xs transition-colors shadow-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">image</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">PNG</span>
+</div>
+<div class="absolute top-2 right-2 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-on-primary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</label>
+<!-- Format Option 2 -->
+<label class="cursor-pointer">
+<input class="sr-only" name="format" type="radio" value="jpg"/>
+<div class="border border-outline-variant hover:border-outline hover:bg-surface-container-low bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center gap-xs transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">image</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">JPG</span>
+</div>
+</label>
+<!-- Format Option 3 -->
+<label class="cursor-pointer">
+<input class="sr-only" name="format" type="radio" value="webp"/>
+<div class="border border-outline-variant hover:border-outline hover:bg-surface-container-low bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center gap-xs transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">image</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">WEBP</span>
+</div>
+</label>
+<!-- Format Option 4 -->
+<label class="cursor-pointer">
+<input class="sr-only" name="format" type="radio" value="svg"/>
+<div class="border border-outline-variant hover:border-outline hover:bg-surface-container-low bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center gap-xs transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">polyline</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SVG</span>
+</div>
+</label>
+<!-- Format Option 5 -->
+<label class="cursor-pointer">
+<input class="sr-only" name="format" type="radio" value="tiff"/>
+<div class="border border-outline-variant hover:border-outline hover:bg-surface-container-low bg-surface-container-lowest rounded-lg p-sm flex flex-col items-center gap-xs transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">photo_library</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">TIFF</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Quality Settings -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col gap-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-sm">
+<h2 class="font-h3 text-h3 text-on-surface">การตั้งค่าคุณภาพ</h2>
+</div>
+<div class="flex flex-col gap-sm mt-sm">
+<label class="font-body-sm text-body-sm text-on-surface-variant">ระดับการบีบอัด</label>
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="flex-1 py-2 font-body-sm text-body-sm text-center rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors">ต่ำ</button>
+<button class="flex-1 py-2 font-body-sm text-body-sm text-center rounded-md bg-surface-container-lowest text-on-surface shadow-sm border border-outline-variant transition-colors font-medium">ปานกลาง</button>
+<button class="flex-1 py-2 font-body-sm text-body-sm text-center rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors">สูง</button>
+<button class="flex-1 py-2 font-body-sm text-body-sm text-center rounded-md text-on-surface-variant hover:bg-surface-container-high transition-colors">ไม่สูญเสียข้อมูล</button>
+</div>
+<p class="font-mono-label text-mono-label text-on-surface-variant mt-xs text-right">ขนาดไฟล์โดยประมาณ: ~2.1 MB</p>
+</div>
+</section>
+<!-- Resize Options -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col gap-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-sm">
+<h2 class="font-h3 text-h3 text-on-surface">ขนาด</h2>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-lowest" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">คงอัตราส่วนกว้างยาว</span>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-md mt-sm">
+<div class="flex flex-col gap-xs">
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="width">ความกว้าง (px)</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-md px-sm py-2 font-mono-label text-mono-label text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-shadow text-right" id="width" type="number" value="1920"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="height">ความสูง (px)</label>
+<input class="bg-surface-container-lowest border border-outline-variant rounded-md px-sm py-2 font-mono-label text-mono-label text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-shadow text-right" id="height" type="number" value="1080"/>
+</div>
+</div>
+</section>
+<!-- Action Bar -->
+<div class="flex items-center justify-end gap-sm mt-auto pt-sm border-t border-outline-variant">
+<button class="px-gutter py-2 font-body-sm text-body-sm font-medium text-secondary bg-transparent hover:bg-surface-container-low rounded-md transition-colors">ยกเลิก</button>
+<button class="px-gutter py-2 font-body-sm text-body-sm font-medium text-on-primary bg-primary hover:bg-primary-container hover:text-on-primary-container rounded-md transition-colors shadow-sm flex items-center gap-xs"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bolt</span> นำไปใช้และแปลงไฟล์</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Suppressed as per rules for transactional/task-focused sub-page) -->
+</body></html>
